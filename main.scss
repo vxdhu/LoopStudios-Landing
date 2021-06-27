@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ :root {
+    --head-font: 'Josefin Sans';
+    --para-font: 'Alata';
+    --color-darkgrey: hsl(0, 0%, 41%);
+    --color-grey: hsl(0, 0%, 41%)
+}
+
+.nav-mob.active {
+    display: unset;
+}
+
+.hero {
+    height: 100vh;
+    padding: 0 1em;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    background-image: url("../images/mobile/image-hero.jpg");
+    background-size: cover;
+}
+
+.ham-nav.active::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: black;
+}
+
+.nav-mob {
+    width: 50%;
+    z-index: 1;
+    padding-top: 5em;
+    ul {
+        list-style-type: none;
+    }
+    li {
+        padding: 1em 0;
+    }
+    a {
+        font-size: 2rem;
+        text-decoration: none;
+        font-family: var(--head-font);
+        color: white;
+        text-transform: uppercase;
+        font-weight: 100;
+    }
+}
+
+.logo-ham-nav {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1em;
+    z-index: 1;
+}
+
+.hero-content {
+    margin: auto auto;
+    border: .15rem solid white;
+    h1 {
+        font-size: 2rem;
+        letter-spacing: .2rem;
+        font-weight: 300;
+        color: white;
+        font-family: 'Josefin Sans';
+        text-transform: uppercase;
+        padding: .5em .4em;
+        padding-right: 2em;
+    }
+}
+
+main {
+    padding: 5em 1em;
+    .img-main {
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.content {
+    margin: 5em 0;
+    margin-top: 3em;
+}
+
+.main-heading {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: var(--head-font);
+    font-weight: 300;
+    font-size: 2rem;
+    color: black;
+}
+
+.subcontent {
+    font-family: var(--para-font);
+    text-align: center;
+    padding: 2em 1em;
+    color: var(--color-grey);
+    line-height: 2;
+}
+
+.our-creations {
+    margin: 2em 0;
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    grid-gap: 1em;
+    .grid-img {
+        position: relative;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    .grid-img::after {
+        content: '';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        background: linear-gradient(to right, rgba(0, 0, 0, .5), transparent);
+    }
+    .main-heading {
+        text-align: left;
+        width: 55%;
+        font-size: 1.5rem;
+        position: absolute;
+        bottom: 15%;
+        color: white;
+        padding: 0 .5em;
+        z-index: 1;
+    }
+}
+
+.creations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.seeall {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-family: var(--para-font);
+    letter-spacing: .25em;
+    padding: .5em 2em;
+    border: .1em solid black;
+    transition: all .1s ease-in-out;
+}
+
+.seeall:hover,
+.seeall:active {
+    background-color: black;
+    color: white;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .logo {
+        padding-top: 4em;
+    }
+}
+
+.footer-nav {
+    text-align: center;
+    margin: 1em 0;
+    li {
+        padding: .7em 0;
+    }
+    a {
+        text-decoration: none;
+        color: whitesmoke;
+        font-family: var(--para-font);
+    }
+}
+
+.social-links {
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    margin: 1em 0;
+    margin-top: 2em;
+}
+
+.attribution {
+    padding: 0;
+    a {
+        color: white;
+        text-decoration: none;
+    }
+    span {
+        color: white;
+    }
+}
+
+footer {
+    .subcontent {
+        padding-top: 0;
+    }
+}
+
+.navbar,
+.img-desk,
+.img-grid-desk,
+.nav-mob,
+.not-active {
+    display: none;
+}
+
+@import '_responsive';
